@@ -10,19 +10,19 @@ const CategoryCard = ({ category }) => {
 
   return (
     <TouchableOpacity
-      className=' mr-2 '
+      className='mr-2 '
       onPress={() => {
-        dispatch(setCategory(category.name));
+        dispatch(setCategory(category?.name));
         dispatch(setBrand(''));
         navigation.navigate('ProductsScreen');
       }}
     >
       <Image
-        className='h-16 w-16 rounded-lg'
-        source={{ uri: category.imgUrl }}
+        className='w-16 h-16 rounded-lg'
+        source={{ uri: category?.imgUrl }}
       />
 
-      <Text className='text-xs self-center'>{category.name}</Text>
+      <Text className='self-center text-xs'>{category?.name}</Text>
     </TouchableOpacity>
   );
 };

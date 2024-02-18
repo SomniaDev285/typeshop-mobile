@@ -16,19 +16,19 @@ const BrandCard = () => {
     >
       {brands.map((brand) => (
         <TouchableOpacity
-          className=' mr-2 '
+          className='mr-2 '
           onPress={() => {
-            dispatch(setBrand(brand.name));
+            dispatch(setBrand(brand?.name));
             dispatch(setCategory(''));
             navigation.navigate('ProductsScreen');
           }}
         >
           <Image
-            className='h-16 w-16 rounded-lg'
-            source={{ uri: brand.imgUrl }}
+            className='w-16 h-16 rounded-lg'
+            source={{ uri: brand?.imgUrl }}
           />
 
-          <Text className='text-xs self-center'>{brand.name}</Text>
+          <Text className='self-center text-xs'>{brand?.name}</Text>
         </TouchableOpacity>
       ))}
     </ScrollView>

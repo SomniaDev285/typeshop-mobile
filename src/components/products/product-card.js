@@ -6,21 +6,23 @@ const ProductCard = ({ product }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
-      className='bg-white mr-3 shadow my-2 rounded-lg w-40 h-44'
-      onPress={() => navigation.navigate('ProductDetails', { id: product._id })}
+      className='w-40 my-2 mr-3 bg-white rounded-lg shadow h-44'
+      onPress={() =>
+        navigation.navigate('ProductDetails', { id: product?._id })
+      }
     >
       <Image
-        className=' h-24 w-28 rounded-sm mt-4 self-center '
-        source={{ uri: product.image }}
+        className='self-center h-24 mt-4 rounded-sm w-28'
+        source={{ uri: product?.image }}
         resizeMode='stretch'
       />
       <View className='px-3 pb-4'>
-        <Text className=' pt-2 text-xs  whitespace-nowrap'>
-          {product.name.substring(0, 20)}..
+        <Text className='pt-2 text-xs whitespace-nowrap'>
+          {product?.name.substring(0, 20)}..
         </Text>
-        <View className='flex-row justify-between items-center  space-x-1 mt-2'>
-          <Text className=' text-xs'>{product?.category}</Text>
-          <Text className='text-green-500 text-xs'>${product?.price}</Text>
+        <View className='flex-row items-center justify-between mt-2 space-x-1'>
+          <Text className='text-xs '>{product?.category}</Text>
+          <Text className='text-xs text-green-500'>${product?.price}</Text>
         </View>
       </View>
     </TouchableOpacity>

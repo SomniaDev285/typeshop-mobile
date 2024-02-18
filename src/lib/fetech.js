@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const baseUrl = 'https://type-shop.herokuapp.com';
+export const baseUrl = 'https://typeshop-server.onrender.com';
 
 export const publicAxios = axios.create({
   baseURL: `${baseUrl}/api`,
