@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-export const baseUrl = 'https://typeshop-server.onrender.com';
+export const baseUrl = process.env.API_URL || "http://localhost:5000";
 
 export const publicAxios = axios.create({
   baseURL: `${baseUrl}/api`,
